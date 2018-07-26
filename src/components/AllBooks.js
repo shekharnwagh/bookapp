@@ -43,7 +43,7 @@ class AllBooks extends Component {
             <div>
                 <h1>BOOK LIST</h1>
                 <table class="table table-striped" border="1">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th>Name</th>
                             <th>Author</th>

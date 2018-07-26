@@ -46,12 +46,21 @@ class EditBook extends Component {
         book["name"] = this.state.name;
         book["author"] = this.state.author;
         book["price"] = this.state.price;
-        BookApi.editBook(this.state.id, book);
-        if (! isNaN(book.price)){
-        this.props.history.push('/');     
+        if (!book.name.length) {
+            alert("Please enter a name !");
+        }
+        else if (!book.author.length) {
+            alert("Please enter a author name");
+        }
+        else if (!book.price) {
+            alert("Please enter a price")
+        }
+        else if (isNaN(book.price)) {
+            alert("Please enter a number for price");
         }
         else {
-            alert("Please enter a number for price");
+            BookApi.editBook(this.state.id,book);
+            this.props.history.push('/');
         }
     }
 
@@ -60,21 +69,25 @@ class EditBook extends Component {
             <form class="col-sm-6">
                 <h1>EDIT BOOK</h1>
                 <div class="form-group">
-                    <label for="name">Name:</label>
+                    <label for="name">Name:<span style={{color:"red"}}>*</span></label>
                     <input id="name" class="form-control" type="text" ref="name" value={this.state.name} onChange={(e) => this.setState({name : e.target.value})} />
                 </div>
                 <div class="form-group">
-                    <label for="author">Author:</label>
+                    <label for="author">Author:<span style={{color:"red"}}>*</span></label>
                     <input id="author" class="form-control" type="text" ref="author" value={this.state.author} onChange={(e) => this.setState({author : e.target.value})}/>
                 </div>
                 <div class="form-group">
-                    <label for="price">Price:</label>
+                    <label for="price">Price:<span style={{color:"red"}}>*</span></label>
                     <input id="price" class="form-control" type="number" ref="price" value={this.state.price} onChange={(e) => this.setState({price : e.target.value})}/>
                 </div>
+                <div>
+                    <span style={{color:"red"}}>*</span>Mandatory fields
+                </div>
+                <br></br>
                 <span>
-                    <input type="submit" value="Save" class="btn btn-success col-sm-2" onClick={this.onSubmit}/>
+                    <input type="submit" value="Save" class="btn btn-success col-sm-3" onClick={this.onSubmit}/>
                     <span class="col-sm-1"></span>
-                    <NavLink to="/"><button class="btn btn-success col-sm-2">Cancel</button></NavLink>
+                    <NavLink to="/"><button class="btn btn-danger col-sm-3">Cancel</button></NavLink>
                 </span>
             </form>
           );
