@@ -4,19 +4,19 @@ export default {
         {
             "id": 1,
             "name": "Hybris",
-            "author": "Smita Jagadale",
+            "author": "Gerold Hightower",
             "price": 550
         },
         {
             "id": 2,
             "name": "Blue Prism",
-            "author": "Priyanka Tambe",
+            "author": "Arthur Dayne",
             "price": 734
         },
         {
             "id": 3,
             "name": "ECAD",
-            "author": "Sonal Shahane",
+            "author": "Lewyn Martell",
             "price": 230
         },
     ]
