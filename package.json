@@ -5,14 +5,13 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^5.0.1"
+    "react-router-dom": "^4.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "vite build",
+    "eject": "react-scripts eject",
+    "preview": "vite preview"
   },
   "browserslist": {
     "production": [
@@ -25,5 +24,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.3"
   }
 }
